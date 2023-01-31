@@ -1,0 +1,547 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Sunnycos Rent</title>
+        <link
+            href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css"
+            rel="stylesheet"
+            integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65"
+            crossorigin="anonymous"
+        />
+        <link
+            rel="stylesheet"
+            href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.3/font/bootstrap-icons.css"
+        />
+        <!-- <link rel="stylesheet" href="select2.css" /> -->
+        <link rel="stylesheet" href="registerMember.css" />
+        <!-- <link rel="stylesheet" href="style.css" /> -->
+        <style>
+            .bg-prime {
+                background-color: #ffe563;
+            }
+
+            .background {
+                position: absolute;
+                top: 0;
+                bottom: 0;
+                left: 0;
+                right: 0;
+                z-index: -9999;
+                background-image: url("bg.jpg");
+                background-repeat: no-repeat;
+                background-size: cover;
+                opacity: 0.3;
+                min-height: 100vh;
+            }
+
+            .content {
+                width: 500px;
+            }
+
+            /* .footer {
+                margin-top: -200px;
+            } */
+
+            .tombol {
+                width: 250px;
+            }
+
+            /* .footer {
+                position: relative;
+            }
+
+            @media only screen and (min-width: 576px) {
+                .footer {
+                    position: absolute;
+                    bottom: 0;
+                    left: 0;
+                    right: 0;
+                }
+            } */
+
+            .shdw {
+                box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+            }
+        </style>
+    </head>
+    <body>
+        <nav class="navbar bg-prime shadow-sm">
+            <div class="container">
+                <a
+                    class="navbar-brand d-flex align-items-center gap-2"
+                    href="#"
+                >
+                    <img
+                        src="logo.png"
+                        alt="Logo"
+                        width="40"
+                        height="40"
+                        class="d-inline-block align-text-top"
+                    />
+                    <span class="fw-semibold fs-4"> Sunnycos Rent </span>
+                </a>
+            </div>
+        </nav>
+        <div class="background"></div>
+
+        <div class="content mx-auto bg-prime mb-3 rounded">
+            <div class="container row justify-content-center mx-auto mt-5 pt-4">
+                <form
+                    action="/register"
+                    method="post"
+                    enctype="multipart/form-data"
+                >
+                    <div
+                        class="field bg-light rounded rounded-3 py-2 px-3 mb-3"
+                    >
+                        <label for="selectChara" class="fs-6"
+                            >Pilih Character yang dirental</label
+                        >
+                        <div class="input-box row select2-container">
+                            <div class="col-1">
+                                <i class="fa-solid fa-shirt text-secondary"></i>
+                            </div>
+                            <div class="col-11">
+                                <select
+                                    name="chara"
+                                    id="selectChara"
+                                    class="bg-transparent border-0 border border-bottom text-secondary js-example-basic-single"
+                                    style="
+                                        border: none;
+                                        background-color: rgba(0, 0, 0);
+                                        width: 100%;
+                                    "
+                                >
+                                    <option value="" selected>
+                                        Pilih Character
+                                    </option>
+                                </select>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div
+                        class="field bg-light rounded rounded-3 py-2 px-3 mb-3"
+                    >
+                        <label for="tgl_sewa" class="fs-6">Tanggal sewa</label>
+                        <div class="input-box row">
+                            <div class="col-1">
+                                <i
+                                    class="fa-solid fa-calendar-days text-secondary"
+                                ></i>
+                            </div>
+                            <div class="col-11">
+                                <input
+                                    type="date"
+                                    name="tgl_sewa"
+                                    id="tgl_sewa"
+                                    class="bg-transparent border-0 border border-bottom text-secondary"
+                                />
+                            </div>
+                        </div>
+                    </div>
+                    <div
+                        class="field bg-light rounded rounded-3 py-2 px-3 mb-3"
+                    >
+                        <label for="tgl_pengiriman" class="fs-6"
+                            >Tanggal Pengiriman</label
+                        >
+                        <div class="input-box row">
+                            <div class="col-1">
+                                <i
+                                    class="fa-solid fa-calendar-days text-secondary"
+                                ></i>
+                            </div>
+                            <div class="col-11">
+                                <input
+                                    type="date"
+                                    name="tgl_pengiriman"
+                                    id="tgl_pengiriman"
+                                    class="bg-transparent border-0 border border-bottom text-secondary"
+                                />
+                            </div>
+                        </div>
+                    </div>
+                    <div
+                        class="field bg-light rounded rounded-3 py-2 px-3 mb-3"
+                    >
+                        <label for="nama" class="fs-6">Nama Lengkap</label>
+                        <div class="input-box row">
+                            <div class="col-1">
+                                <i
+                                    class="fa-solid fa-id-card text-secondary"
+                                ></i>
+                            </div>
+                            <div class="col-11">
+                                <input
+                                    type="text"
+                                    name="nama"
+                                    id="nama"
+                                    placeholder="Nama Lengkap"
+                                    class="bg-transparent border-0 border border-bottom text-secondary"
+                                    name="nama"
+                                />
+                            </div>
+                        </div>
+                    </div>
+                    <div
+                        class="field bg-light rounded rounded-3 py-2 px-3 mb-3"
+                    >
+                        <label for="no_hp" class="fs-6">No HP</label>
+                        <div class="input-box row">
+                            <div class="col-1">
+                                <i
+                                    class="fa-solid fa-mobile-screen-button text-secondary"
+                                ></i>
+                            </div>
+                            <div class="col-11">
+                                <input
+                                    type="number"
+                                    name="no_hp"
+                                    id="no_hp"
+                                    placeholder="08xxxx"
+                                    class="bg-transparent border-0 border border-bottom text-secondary"
+                                />
+                            </div>
+                        </div>
+                    </div>
+                    <div
+                        class="field bg-light rounded rounded-3 py-2 px-3 mb-3"
+                    >
+                        <label for="selectProvinsi" class="fs-6"
+                            >Provinsi</label
+                        >
+                        <div class="input-box row select2-container">
+                            <div class="col-1">
+                                <i class="fa-solid fa-city text-secondary"></i>
+                            </div>
+                            <div class="col-11">
+                                <select
+                                    name="provinsi"
+                                    id="selectProvinsi"
+                                    class="bg-transparent border-0 border border-bottom text-secondary js-example-basic-single"
+                                    style="
+                                        border: none;
+                                        background-color: rgba(0, 0, 0);
+                                        width: 100%;
+                                    "
+                                    onchange="openCity(event)"
+                                >
+                                    <option value="" disabled selected>
+                                        Pilih Provinsi
+                                    </option>
+                                    <!-- @foreach ($provinces as $prov) -->
+                                    <option value="{{ $prov['province_id'] }}">
+                                        <!-- {{ $prov['province'] }} -->
+                                    </option>
+                                    <!-- @endforeach -->
+                                </select>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div
+                        class="field bg-light rounded rounded-3 py-2 px-3 mb-3"
+                    >
+                        <label for="selectKota" class="fs-6"
+                            >Kota/Kabupaten</label
+                        >
+                        <div class="input-box row select2-container">
+                            <div class="col-1">
+                                <i
+                                    class="fa-solid fa-building text-secondary"
+                                ></i>
+                            </div>
+                            <div class="col-11">
+                                <select
+                                    name="kota"
+                                    id="selectKota"
+                                    class="bg-transparent border-0 border border-bottom text-secondary js-example-basic-single"
+                                    style="
+                                        border: none;
+                                        background-color: rgba(0, 0, 0);
+                                        width: 100%;
+                                    "
+                                    disabled
+                                >
+                                    <option value="" disabled selected>
+                                        Pilih Kota/Kabupaten
+                                    </option>
+                                </select>
+                            </div>
+                        </div>
+                    </div>
+                    <div
+                        class="field bg-light rounded rounded-3 py-2 px-3 mb-3"
+                    >
+                        <label for="alamat" class="fs-6">Alamat Lengkap</label>
+                        <div class="input-box row">
+                            <div class="col-1">
+                                <i
+                                    class="fa-solid fa-house-chimney text-secondary"
+                                ></i>
+                            </div>
+                            <div class="col-11">
+                                <textarea
+                                    name="alamat"
+                                    id="alamat"
+                                    rows="10"
+                                    class="bg-transparent border-0 border border-bottom text-secondary p-1"
+                                    style="width: 100%"
+                                    placeholder="example: Jl. Melati No. 99 RT.1/RW.2, Kec. Bunga"
+                                ></textarea>
+                            </div>
+                        </div>
+                    </div>
+                    <div
+                        class="field bg-light rounded rounded-3 py-2 px-3 mb-3"
+                    >
+                        <label for="kode_pos" class="fs-6">Kode Pos</label>
+                        <div class="input-box row">
+                            <div class="col-1">
+                                <i
+                                    class="fa-solid fa-signs-post text-secondary"
+                                ></i>
+                            </div>
+                            <div class="col-11">
+                                <input
+                                    type="text"
+                                    name="kode_pos"
+                                    id="kode_pos"
+                                    placeholder="60xxx"
+                                    class="bg-transparent border-0 border border-bottom text-secondary"
+                                />
+                            </div>
+                        </div>
+                    </div>
+                    <div
+                        class="field bg-light rounded rounded-3 py-2 px-3 mb-3"
+                    >
+                        <label for="nama" class="fs-6">Instagram</label>
+                        <div class="input-box row">
+                            <div class="col-1">
+                                <i
+                                    class="fa-brands fa-instagram text-secondary"
+                                ></i>
+                            </div>
+                            <div class="col-11">
+                                <input
+                                    type="text"
+                                    name="instagram"
+                                    id="instagram"
+                                    placeholder="@xxxx"
+                                    class="bg-transparent border-0 border border-bottom text-secondary"
+                                    name="instagram"
+                                />
+                            </div>
+                        </div>
+                    </div>
+                    <div
+                        class="field bg-light rounded rounded-3 py-2 px-3 mb-3"
+                    >
+                        <label for="no_wa" class="fs-6">No Whatsapp</label>
+                        <div class="input-box row">
+                            <div class="col-1">
+                                <i
+                                    class="fa-brands fa-whatsapp text-secondary"
+                                ></i>
+                            </div>
+                            <div class="col-11">
+                                <input
+                                    type="number"
+                                    name="no_wa"
+                                    id="no_wa"
+                                    placeholder="08xxxx"
+                                    class="bg-transparent border-0 border border-bottom text-secondary"
+                                />
+                            </div>
+                        </div>
+                    </div>
+                    <div
+                        class="field bg-light rounded rounded-3 py-2 px-3 mb-3"
+                    >
+                        <label for="no_hp_kerabat1" class="fs-6"
+                            >No Telepon Kerabat 1</label
+                        >
+                        <div class="input-box row">
+                            <div class="col-1">
+                                <i
+                                    class="fa-solid fa-mobile-screen-button text-secondary"
+                                ></i>
+                            </div>
+                            <div class="col-11">
+                                <input
+                                    type="text"
+                                    name="no_hp_kerabat1"
+                                    id="no_hp_kerabat1"
+                                    placeholder="08xxxx"
+                                    class="bg-transparent border-0 border border-bottom text-secondary"
+                                />
+                            </div>
+                        </div>
+                    </div>
+                    <div
+                        class="field bg-light rounded rounded-3 py-2 px-3 mb-3"
+                    >
+                        <label for="no_hp_kerabat2" class="fs-6"
+                            >No Telepon Kerabat 2</label
+                        >
+                        <div class="input-box row">
+                            <div class="col-1">
+                                <i
+                                    class="fa-solid fa-mobile-screen-button text-secondary"
+                                ></i>
+                            </div>
+                            <div class="col-11">
+                                <input
+                                    type="text"
+                                    name="no_hp_kerabat2"
+                                    id="no_hp_kerabat2"
+                                    placeholder="08xxxx"
+                                    class="bg-transparent border-0 border border-bottom text-secondary"
+                                />
+                            </div>
+                        </div>
+                    </div>
+                    <div
+                        class="field bg-light rounded rounded-3 py-2 px-3 mb-3"
+                    >
+                        <label for="foto_selfie" class="fs-6"
+                            >Foto Selfie dengan KTP</label
+                        >
+                        <div class="input-box row mb-3">
+                            <div class="col-1">
+                                <i
+                                    class="fa-solid fa-image-portrait text-secondary"
+                                ></i>
+                            </div>
+                            <div class="col-11">
+                                <label class="file">
+                                    <input
+                                        type="file"
+                                        name="foto_selfie"
+                                        id="foto_selfie"
+                                        aria-label="File browser example"
+                                        onchange="previewImg(event)"
+                                    />
+                                    <span
+                                        class="file-custom bg-transparent border-0 border border-bottom text-secondary"
+                                        >Choose File...</span
+                                    >
+                                </label>
+                            </div>
+                        </div>
+                        <div class="preview-img-box">
+                            <img class="preview-img" src="" alt="prev" />
+                        </div>
+                    </div>
+                    <div
+                        class="field bg-light rounded rounded-3 py-2 px-3 mb-3"
+                    >
+                        <label for="foto_ktp" class="fs-6"
+                            >Foto KTP/KK (Tulis dikertas @sunbae)</label
+                        >
+                        <div class="input-box row mb-3">
+                            <div class="col-1">
+                                <i
+                                    class="fa-solid fa-file-image text-secondary"
+                                ></i>
+                            </div>
+                            <div class="col-11">
+                                <label class="file">
+                                    <input
+                                        type="file"
+                                        name="foto_ktp"
+                                        id="foto_ktp"
+                                        aria-label="File browser example"
+                                        onchange="previewImg(event)"
+                                    />
+                                    <div
+                                        class="file-custom bg-transparent border-0 border border-bottom text-secondary"
+                                    >
+                                        Choose File ...
+                                    </div>
+                                </label>
+                            </div>
+                        </div>
+                        <div class="preview-img-box">
+                            <img class="preview-img" src="" alt="prev" />
+                        </div>
+                    </div>
+                    <div class="field d-flex mb-2">
+                        <button
+                            type="submit"
+                            class="btn btn-primary rounded-pill login-btn fw-bold"
+                        >
+                            Rent
+                        </button>
+                    </div>
+                </form>
+            </div>
+        </div>
+
+        <footer class="footer bg-prime">
+            <div class="container row py-3 mx-auto">
+                <div class="col-md-6 col-12">
+                    <h5>Contacts</h5>
+                    <ul class="list-unstyled">
+                        <li class="mb-1">
+                            <a
+                                target="_blank"
+                                href="https://www.instagram.com/sunnycosrent.id/"
+                                class="text-decoration-none text-dark"
+                                ><i class="bi bi-instagram"></i>
+                                sunnycosrent.id</a
+                            >
+                        </li>
+                        <li class="mb-1">
+                            <a
+                                target="_blank"
+                                href="https://wa.me/6288225827229"
+                                class="text-decoration-none text-dark"
+                                ><i class="bi bi-whatsapp"></i> 62
+                                882-2582-7229</a
+                            >
+                        </li>
+                    </ul>
+                </div>
+                <div class="col-md-6 col-12">
+                    <h5>Payments</h5>
+                    <ul class="list-unstyled">
+                        <li class="mb-1">
+                            <span>BCA 2302717819 - Yasmine Noor Zahwa</span>
+                        </li>
+                        <li class="mb-1">
+                            <span>Dana</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </footer>
+
+        <script
+            src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"
+            integrity="sha384-oBqDVmMz9ATKxIep9tiCxS/Z9fNfEXiDAYTujMAeBAsjFuCZSmKbSSUnQlmh/jp3"
+            crossorigin="anonymous"
+        ></script>
+        <script
+            src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.min.js"
+            integrity="sha384-cuYeSxntonz0PPNlHhBs68uyIAVpIIOZZ5JqeqvYYIcEL727kskC66kF92t6Xl2V"
+            crossorigin="anonymous"
+        ></script>
+        <script
+            src="https://kit.fontawesome.com/3e53fcc07c.js"
+            crossorigin="anonymous"
+        ></script>
+        <script
+            src="https://code.jquery.com/jquery-3.6.1.min.js"
+            integrity="sha256-o88AwQnZB+VDvE9tvIXrMQaPlFFSUTR+nldQm1LuPXQ="
+            crossorigin="anonymous"
+        ></script>
+
+        <script src="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/js/select2.min.js"></script>
+    </body>
+</html>
